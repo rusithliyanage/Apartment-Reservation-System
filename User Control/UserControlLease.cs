@@ -124,11 +124,11 @@ namespace Apartment_Reservation_System.User_Control
                 if (check)
                 {
                     Clear();
-                    MessageBox.Show("User added successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Lease Agreement added successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Username alredy exits or somthing went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Somthing went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
