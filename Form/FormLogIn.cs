@@ -41,6 +41,7 @@ namespace Apartment_Reservation_System
                     if (loginStatus == 1)
                     {
                         loginSuccessful = true;
+                        conn.Close();
                         return loginSuccessful;
                     }
                     else

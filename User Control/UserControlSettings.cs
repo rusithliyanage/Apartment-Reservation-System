@@ -53,6 +53,7 @@ namespace Apartment_Reservation_System.User_Control
                     if (queryStatus > 0)
                     {
                         status = true;
+                        conn.Close();
                         return status;
                     }
                     else
