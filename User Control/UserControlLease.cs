@@ -20,7 +20,7 @@ namespace Apartment_Reservation_System.User_Control
         public bool SubmitLeaseAgreement(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9, string v10, string v11, string v12)
         {
             bool SubmitStatus = false;
-            string sql = "INSERT INTO User_Table1 (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
+            string sql = "INSERT INTO LeaseAgreement (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
             try
             {
                 using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
