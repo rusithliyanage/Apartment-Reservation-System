@@ -16,5 +16,10 @@ namespace Apartment_Reservation_System.User_Control
         {
             InitializeComponent();
         }
+
+        private void UserControlApartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

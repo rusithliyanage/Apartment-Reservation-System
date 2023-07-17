@@ -38,27 +38,31 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HelveticaNowText Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.label1.Location = new System.Drawing.Point(52, 54);
+            this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Available Apartments";
+            this.label1.UseWaitCursor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 215);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1134, 369);
+            this.dataGridView1.Size = new System.Drawing.Size(1049, 316);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.UseWaitCursor = true;
             // 
             // buttonSearchUsername
             // 
@@ -68,31 +72,34 @@
             this.buttonSearchUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearchUsername.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearchUsername.ForeColor = System.Drawing.Color.White;
-            this.buttonSearchUsername.Location = new System.Drawing.Point(738, 144);
+            this.buttonSearchUsername.Location = new System.Drawing.Point(708, 76);
             this.buttonSearchUsername.Name = "buttonSearchUsername";
             this.buttonSearchUsername.Size = new System.Drawing.Size(138, 31);
             this.buttonSearchUsername.TabIndex = 14;
             this.buttonSearchUsername.Text = "Search";
             this.buttonSearchUsername.UseVisualStyleBackColor = false;
+            this.buttonSearchUsername.UseWaitCursor = true;
             // 
             // textBoxSearchUsername
             // 
             this.textBoxSearchUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearchUsername.Location = new System.Drawing.Point(367, 145);
+            this.textBoxSearchUsername.Location = new System.Drawing.Point(337, 77);
             this.textBoxSearchUsername.Name = "textBoxSearchUsername";
             this.textBoxSearchUsername.Size = new System.Drawing.Size(347, 25);
             this.textBoxSearchUsername.TabIndex = 13;
+            this.textBoxSearchUsername.UseWaitCursor = true;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HelveticaNowText Regular", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(362, 106);
+            this.label3.Location = new System.Drawing.Point(332, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(198, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Apartment Class No:";
+            this.label3.UseWaitCursor = true;
             // 
             // UserControlApartment
             // 
@@ -107,7 +114,9 @@
             this.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserControlApartment";
-            this.Size = new System.Drawing.Size(1240, 635);
+            this.Size = new System.Drawing.Size(1102, 462);
+            this.UseWaitCursor = true;
+            this.Load += new System.EventHandler(this.UserControlApartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

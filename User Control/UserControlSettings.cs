@@ -18,6 +18,27 @@ namespace Apartment_Reservation_System.User_Control
         {
             InitializeComponent();
         }
+        public void GetAllUsers()
+        {
+            string sql = "SELECT * FROM User_Table";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                {
+                    conn.Open();
+                    SqlCommand sqlCommand = new SqlCommand(sql, conn);
+                    SqlDataReader reader = sqlCommand.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    dataGridViewAllUsers.DataSource = dt;
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         public void Clear()
         {
             textBoxUsername.Clear();
@@ -109,7 +130,7 @@ namespace Apartment_Reservation_System.User_Control
 
         private void UserControlSettings_Load(object sender, EventArgs e)
         {
-
+            GetAllUsers();
         }
 
         private void tabPageAddUser_Leave(object sender, EventArgs e)
@@ -161,24 +182,7 @@ namespace Apartment_Reservation_System.User_Control
 
         private void tabPageAllUsers_Enter(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM User_Table";
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
-                {
-                    conn.Open();
-                    SqlCommand sqlCommand = new SqlCommand(sql, conn);
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
-                    DataTable dt = new DataTable();
-                    dt.Load(reader);
-                    dataGridViewAllUsers.DataSource = dt;
-                    conn.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            GetAllUsers();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)

@@ -42,17 +42,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.userControlApartment1 = new Apartment_Reservation_System.User_Control.UserControlApartment();
             this.labelUsername = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.userControlApartment1 = new Apartment_Reservation_System.User_Control.UserControlApartment();
+            this.userControlApartment2 = new Apartment_Reservation_System.User_Control.UserControlApartment();
             this.userControlSettings1 = new Apartment_Reservation_System.User_Control.UserControlSettings();
             this.userControlReservation1 = new Apartment_Reservation_System.User_Control.UserControlReservation();
             this.userControlClients1 = new Apartment_Reservation_System.User_Control.UserControlClients();
             this.userControlLease1 = new Apartment_Reservation_System.User_Control.UserControlLease();
-            this.userControlApartment2 = new Apartment_Reservation_System.User_Control.UserControlApartment();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -247,6 +247,19 @@
             this.panel2.Size = new System.Drawing.Size(1165, 142);
             this.panel2.TabIndex = 0;
             // 
+            // userControlApartment1
+            // 
+            this.userControlApartment1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userControlApartment1.BackColor = System.Drawing.Color.White;
+            this.userControlApartment1.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlApartment1.Location = new System.Drawing.Point(61, 141);
+            this.userControlApartment1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControlApartment1.Name = "userControlApartment1";
+            this.userControlApartment1.Size = new System.Drawing.Size(915, 437);
+            this.userControlApartment1.TabIndex = 1;
+            this.userControlApartment1.UseWaitCursor = true;
+            this.userControlApartment1.Visible = false;
+            // 
             // labelUsername
             // 
             this.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -304,11 +317,11 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.userControlLease1);
             this.panel5.Controls.Add(this.userControlApartment2);
             this.panel5.Controls.Add(this.userControlSettings1);
             this.panel5.Controls.Add(this.userControlReservation1);
             this.panel5.Controls.Add(this.userControlClients1);
+            this.panel5.Controls.Add(this.userControlLease1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
@@ -316,17 +329,17 @@
             this.panel5.TabIndex = 0;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // userControlApartment1
+            // userControlApartment2
             // 
-            this.userControlApartment1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userControlApartment1.BackColor = System.Drawing.Color.White;
-            this.userControlApartment1.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlApartment1.Location = new System.Drawing.Point(61, 141);
-            this.userControlApartment1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlApartment1.Name = "userControlApartment1";
-            this.userControlApartment1.Size = new System.Drawing.Size(915, 437);
-            this.userControlApartment1.TabIndex = 1;
-            this.userControlApartment1.Visible = false;
+            this.userControlApartment2.BackColor = System.Drawing.Color.White;
+            this.userControlApartment2.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlApartment2.Location = new System.Drawing.Point(305, 147);
+            this.userControlApartment2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControlApartment2.Name = "userControlApartment2";
+            this.userControlApartment2.Size = new System.Drawing.Size(1162, 563);
+            this.userControlApartment2.TabIndex = 4;
+            this.userControlApartment2.UseWaitCursor = true;
+            this.userControlApartment2.Visible = false;
             // 
             // userControlSettings1
             // 
@@ -369,19 +382,6 @@
             this.userControlLease1.Name = "userControlLease1";
             this.userControlLease1.Size = new System.Drawing.Size(1468, 712);
             this.userControlLease1.TabIndex = 1;
-            this.userControlLease1.Visible = false;
-            // 
-            // userControlApartment2
-            // 
-            this.userControlApartment2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userControlApartment2.BackColor = System.Drawing.Color.White;
-            this.userControlApartment2.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlApartment2.Location = new System.Drawing.Point(303, 141);
-            this.userControlApartment2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlApartment2.Name = "userControlApartment2";
-            this.userControlApartment2.Size = new System.Drawing.Size(1165, 571);
-            this.userControlApartment2.TabIndex = 4;
-            this.userControlApartment2.Visible = false;
             // 
             // FormDashboard
             // 

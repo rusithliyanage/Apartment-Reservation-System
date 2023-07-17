@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,22 @@ namespace Apartment_Reservation_System
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-            labelUsername.Text = Username;
+            string sql = "SELECT First_Name FROM User_Table WHERE User_Name=@userName";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                {
+                    conn.Open();
+                    SqlCommand sqlCommand = new SqlCommand(sql, conn);
+                    sqlCommand.Parameters.AddWithValue("@userName", Username);
+                    labelUsername.Text = (string)sqlCommand.ExecuteScalar();
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
@@ -63,7 +79,7 @@ namespace Apartment_Reservation_System
             //MovePanel(buttonDashboard);
             userControlSettings1.Hide();
             userControlLease1.Hide();
-            userControlApartment1.Hide();
+            userControlApartment2.Hide();
             userControlReservation1.Hide();
             userControlClients1.Hide();
         }
@@ -73,7 +89,7 @@ namespace Apartment_Reservation_System
             MovePanel(buttonLease);
             userControlLease1.Show();
             userControlSettings1.Hide();
-            userControlApartment1.Hide();
+            userControlApartment2.Hide();
             userControlReservation1.Hide();
             userControlClients1.Hide();
         }
@@ -81,7 +97,7 @@ namespace Apartment_Reservation_System
         private void buttonApartment_Click(object sender, EventArgs e)
         {
             MovePanel(buttonApartment);
-            userControlApartment1.Show();
+            userControlApartment2.Show();
             userControlSettings1.Hide();
             userControlLease1.Hide();
             userControlReservation1.Hide();
@@ -94,7 +110,7 @@ namespace Apartment_Reservation_System
             userControlReservation1.Show();
             userControlSettings1.Hide();
             userControlLease1.Hide();
-            userControlApartment1.Hide();
+            userControlApartment2.Hide();
             userControlClients1.Hide();
         }
 
@@ -104,7 +120,7 @@ namespace Apartment_Reservation_System
             userControlClients1.Show();
             userControlSettings1.Hide();
             userControlLease1.Hide();
-            userControlApartment1.Hide();
+            userControlApartment2.Hide();
             userControlReservation1.Hide();
         }
 
@@ -114,7 +130,7 @@ namespace Apartment_Reservation_System
             userControlSettings1.Clear();
             userControlSettings1.Show();
             userControlLease1.Hide();
-            userControlApartment1.Hide();
+            userControlApartment2.Hide();
             userControlClients1.Hide();
         }
 
