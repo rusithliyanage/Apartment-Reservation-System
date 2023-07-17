@@ -15,6 +15,7 @@ namespace Apartment_Reservation_System
     public partial class FormDashboard : Form
     {
         public string Username;
+        public string sqlConnString = @"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;";
         public FormDashboard()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace Apartment_Reservation_System
             string sql = "SELECT First_Name FROM User_Table WHERE User_Name=@userName";
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);

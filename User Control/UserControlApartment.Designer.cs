@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAvlApartments = new System.Windows.Forms.DataGridView();
             this.buttonSearchUsername = new System.Windows.Forms.Button();
             this.textBoxSearchUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvlApartments)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,20 +49,20 @@
             this.label1.Text = "Available Apartments";
             this.label1.UseWaitCursor = true;
             // 
-            // dataGridView1
+            // dataGridViewAvlApartments
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 126);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1049, 316);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.UseWaitCursor = true;
+            this.dataGridViewAvlApartments.AllowUserToAddRows = false;
+            this.dataGridViewAvlApartments.AllowUserToDeleteRows = false;
+            this.dataGridViewAvlApartments.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewAvlApartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAvlApartments.Location = new System.Drawing.Point(34, 126);
+            this.dataGridViewAvlApartments.Name = "dataGridViewAvlApartments";
+            this.dataGridViewAvlApartments.ReadOnly = true;
+            this.dataGridViewAvlApartments.RowHeadersWidth = 51;
+            this.dataGridViewAvlApartments.RowTemplate.Height = 24;
+            this.dataGridViewAvlApartments.Size = new System.Drawing.Size(1049, 316);
+            this.dataGridViewAvlApartments.TabIndex = 1;
+            this.dataGridViewAvlApartments.UseWaitCursor = true;
             // 
             // buttonSearchUsername
             // 
@@ -109,7 +109,7 @@
             this.Controls.Add(this.buttonSearchUsername);
             this.Controls.Add(this.textBoxSearchUsername);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewAvlApartments);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("HelveticaNowText Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -117,7 +117,7 @@
             this.Size = new System.Drawing.Size(1102, 462);
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.UserControlApartment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvlApartments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +126,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAvlApartments;
         private System.Windows.Forms.Button buttonSearchUsername;
         private System.Windows.Forms.TextBox textBoxSearchUsername;
         private System.Windows.Forms.Label label3;

@@ -13,6 +13,7 @@ namespace Apartment_Reservation_System.User_Control
 {
     public partial class UserControlLease : UserControl
     {
+        public string sqlConnString = @"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;";
         public UserControlLease()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Apartment_Reservation_System.User_Control
             string sql = "INSERT INTO LeaseAgreement (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);

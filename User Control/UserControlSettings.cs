@@ -14,6 +14,7 @@ namespace Apartment_Reservation_System.User_Control
     public partial class UserControlSettings : UserControl
     {
         private string ID = "";
+        public string sqlConnString = @"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;";
         public UserControlSettings()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Apartment_Reservation_System.User_Control
             string sql = "SELECT * FROM User_Table";
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);
@@ -61,7 +62,7 @@ namespace Apartment_Reservation_System.User_Control
             string sql = "INSERT INTO User_Table (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);
@@ -95,7 +96,7 @@ namespace Apartment_Reservation_System.User_Control
             string sql = "SELECT User_ID,User_Name,First_Name,Last_Name FROM User_Table WHERE User_Name=@userName";
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C2D8DI8\SQLEXPRESS;Initial Catalog=Apartment_Reservation_System;Integrated Security=True;"))
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);
@@ -161,13 +162,21 @@ namespace Apartment_Reservation_System.User_Control
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             bool check;
-            if (textBoxUsername.Text.Trim() == string.Empty || textBoxFirstName.Text.Trim() == string.Empty || textBoxLastName.Text.Trim() == string.Empty || textBoxPassword.Text.Trim() == string.Empty)
+            if (textBoxUsername.Text.Trim() == string.Empty ||
+                textBoxFirstName.Text.Trim() == string.Empty ||
+                textBoxLastName.Text.Trim() == string.Empty ||
+                textBoxPassword.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Please fill out all fields", "Require all fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                check = AddUser(textBoxUsername.Text.Trim(), textBoxFirstName.Text.Trim(), textBoxLastName.Text.Trim(), textBoxPassword.Text.Trim());
+                check = AddUser(
+                    textBoxUsername.Text.Trim(),
+                    textBoxFirstName.Text.Trim(),
+                    textBoxLastName.Text.Trim(),
+                    textBoxPassword.Text.Trim());
+
                 if (check)
                 {
                     Clear();
@@ -190,13 +199,20 @@ namespace Apartment_Reservation_System.User_Control
             bool check;
             if (ID != "")
             {
-                if (textBoxUsername1.Text.Trim() == string.Empty || textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPassword1.Text.Trim() == string.Empty)
+                if (textBoxUsername1.Text.Trim() == string.Empty ||
+                    textBoxFirstName1.Text.Trim() == string.Empty ||
+                    textBoxLastName1.Text.Trim() == string.Empty ||
+                    textBoxPassword1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill out all fields", "Require all fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    check = AddUser(textBoxUsername.Text.Trim(), textBoxFirstName.Text.Trim(), textBoxLastName.Text.Trim(), textBoxPassword.Text.Trim());
+                    check = AddUser(
+                        textBoxUsername.Text.Trim(),
+                        textBoxFirstName.Text.Trim(),
+                        textBoxLastName.Text.Trim(),
+                        textBoxPassword.Text.Trim());
                     if (check)
                     {
                         Clear();
@@ -215,13 +231,20 @@ namespace Apartment_Reservation_System.User_Control
             bool check;
             if (ID != "")
             {
-                if (textBoxUsername1.Text.Trim() == string.Empty || textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPassword1.Text.Trim() == string.Empty)
+                if (textBoxUsername1.Text.Trim() == string.Empty ||
+                    textBoxFirstName1.Text.Trim() == string.Empty ||
+                    textBoxLastName1.Text.Trim() == string.Empty ||
+                    textBoxPassword1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill out all fields", "Require all fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    check = AddUser(textBoxUsername.Text.Trim(), textBoxFirstName.Text.Trim(), textBoxLastName.Text.Trim(), textBoxPassword.Text.Trim());
+                    check = AddUser(
+                        textBoxUsername.Text.Trim(),
+                        textBoxFirstName.Text.Trim(),
+                        textBoxLastName.Text.Trim(),
+                        textBoxPassword.Text.Trim());
                     if (check)
                     {
                         Clear();

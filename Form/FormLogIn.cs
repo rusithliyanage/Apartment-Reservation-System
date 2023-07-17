@@ -100,7 +100,9 @@ namespace Apartment_Reservation_System
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             bool check = IsValidUser(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
-            if(textBoxUsername.Text.Trim() == string.Empty || textBoxPassword.Text.Trim() == string.Empty) {
+            if(textBoxUsername.Text.Trim() == string.Empty ||
+                textBoxPassword.Text.Trim() == string.Empty) 
+            {
                 MessageBox.Show("Please fill out all fields.", "Required field", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
