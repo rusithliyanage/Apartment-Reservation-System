@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSlide = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonDashboard = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonClients = new System.Windows.Forms.Button();
@@ -67,7 +66,6 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panelSlide);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.buttonDashboard);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.buttonSettings);
             this.panel1.Controls.Add(this.buttonClients);
@@ -103,23 +101,6 @@
             this.label5.Text = " All Rights Reserved.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonDashboard.Location = new System.Drawing.Point(29, 158);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(211, 48);
-            this.buttonDashboard.TabIndex = 1;
-            this.buttonDashboard.Text = "Dashboard";
-            this.buttonDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -141,7 +122,7 @@
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSettings.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonSettings.Location = new System.Drawing.Point(29, 398);
+            this.buttonSettings.Location = new System.Drawing.Point(28, 351);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(211, 48);
             this.buttonSettings.TabIndex = 6;
@@ -158,7 +139,7 @@
             this.buttonClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClients.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonClients.Location = new System.Drawing.Point(29, 350);
+            this.buttonClients.Location = new System.Drawing.Point(28, 303);
             this.buttonClients.Name = "buttonClients";
             this.buttonClients.Size = new System.Drawing.Size(211, 48);
             this.buttonClients.TabIndex = 5;
@@ -175,7 +156,7 @@
             this.buttonReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReservation.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonReservation.Location = new System.Drawing.Point(29, 302);
+            this.buttonReservation.Location = new System.Drawing.Point(28, 255);
             this.buttonReservation.Name = "buttonReservation";
             this.buttonReservation.Size = new System.Drawing.Size(211, 48);
             this.buttonReservation.TabIndex = 4;
@@ -192,7 +173,7 @@
             this.buttonApartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonApartment.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonApartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonApartment.Location = new System.Drawing.Point(29, 254);
+            this.buttonApartment.Location = new System.Drawing.Point(28, 207);
             this.buttonApartment.Name = "buttonApartment";
             this.buttonApartment.Size = new System.Drawing.Size(211, 48);
             this.buttonApartment.TabIndex = 3;
@@ -209,7 +190,7 @@
             this.buttonLease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLease.Font = new System.Drawing.Font("HelveticaNowText Regular", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLease.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.buttonLease.Location = new System.Drawing.Point(29, 206);
+            this.buttonLease.Location = new System.Drawing.Point(28, 159);
             this.buttonLease.Name = "buttonLease";
             this.buttonLease.Size = new System.Drawing.Size(211, 48);
             this.buttonLease.TabIndex = 2;
@@ -449,7 +430,6 @@
         private System.Windows.Forms.Button buttonClients;
         private System.Windows.Forms.Button buttonReservation;
         private System.Windows.Forms.Button buttonApartment;
-        private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
