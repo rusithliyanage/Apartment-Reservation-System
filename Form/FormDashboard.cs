@@ -60,7 +60,7 @@ namespace Apartment_Reservation_System
 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-            MovePanel(buttonDashboard);
+            //MovePanel(buttonDashboard);
             userControlSettings1.Hide();
             userControlLease1.Hide();
             userControlApartment1.Hide();
