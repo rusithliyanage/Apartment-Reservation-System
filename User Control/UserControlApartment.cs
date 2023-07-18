@@ -44,5 +44,10 @@ namespace Apartment_Reservation_System.User_Control
         {
             GetAvailableApartments(textBoxSearchUsername.Text);
         }
+
+        private void buttonSearchUsername_Click(object sender, EventArgs e)
+        {
+            GetAvailableApartments(textBoxSearchUsername.Text);
+        }
     }
 }

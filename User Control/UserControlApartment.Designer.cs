@@ -79,6 +79,7 @@
             this.buttonSearchUsername.Text = "Search";
             this.buttonSearchUsername.UseVisualStyleBackColor = false;
             this.buttonSearchUsername.UseWaitCursor = true;
+            this.buttonSearchUsername.Click += new System.EventHandler(this.buttonSearchUsername_Click);
             // 
             // textBoxSearchUsername
             // 

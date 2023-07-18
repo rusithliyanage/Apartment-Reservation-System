@@ -21,7 +21,7 @@ namespace Apartment_Reservation_System.User_Control
         public bool SubmitReserveAgreement(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9, string v10, string v11)
         {
             bool SubmitStatus = false;
-            string sql = "INSERT INTO ReserveAgreement (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
+            string sql = "INSERT INTO ReserveAgreements (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
             try
             {
                 using (SqlConnection conn = new SqlConnection(sqlConnString))
@@ -53,6 +53,41 @@ namespace Apartment_Reservation_System.User_Control
                 return SubmitStatus;
             }
 
+        }
+        public bool AddToQueue(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9, string v10, string v11)
+        {
+            bool SubmitStatus = false;
+            string sql = "INSERT INTO ReserveAgreements (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(sqlConnString))
+                {
+                    conn.Open();
+                    SqlCommand sqlCommand = new SqlCommand(sql, conn);
+                    sqlCommand.Parameters.AddWithValue("@userName", v1);
+                    sqlCommand.Parameters.AddWithValue("@FirstName", v2);
+                    sqlCommand.Parameters.AddWithValue("@LastName", v3);
+                    sqlCommand.Parameters.AddWithValue("@passWord", v4);
+
+                    int queryStatus = (int)sqlCommand.ExecuteNonQuery();
+
+                    if (queryStatus > 0)
+                    {
+                        SubmitStatus = true;
+                        conn.Close();
+                        return SubmitStatus;
+                    }
+                    else
+                    {
+                        return SubmitStatus;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return SubmitStatus;
+            }
         }
         public void Clear()
         {
@@ -117,7 +152,7 @@ namespace Apartment_Reservation_System.User_Control
                 if (check)
                 {
                     Clear();
-                    MessageBox.Show("Lease Agreement added successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reserve Agreement added successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -128,7 +163,49 @@ namespace Apartment_Reservation_System.User_Control
 
         private void buttonAddToQueue_Click(object sender, EventArgs e)
         {
+            bool check;
+            bool str =
+                string.IsNullOrEmpty(textBoxFullName1.Text) ||
+                string.IsNullOrEmpty(textBoxNicOrPassportNo1.Text) ||
+                string.IsNullOrEmpty(textBoxAltAddress1.Text) ||
+                string.IsNullOrEmpty(textBoxEmgContact1.Text) ||
+                string.IsNullOrEmpty(textBoxDependents1.Text) ||
+                string.IsNullOrEmpty(comboBoxLocation1.Text) ||
+                string.IsNullOrEmpty(comboBoxAptClass1.Text) ||
+                string.IsNullOrEmpty(textBoxAptNo1.Text) ||
+                string.IsNullOrEmpty(dateTimePickerDateOfOccp.Text) ||
+                string.IsNullOrEmpty(textBoxTimePeriod1.Text) ||
+                string.IsNullOrEmpty(textBoxDeposit1.Text);
 
+            if (str)
+            {
+                MessageBox.Show("Please fill out all fields", "Require all fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                check = AddToQueue (
+                    textBoxFullName1.Text.Trim(),
+                    textBoxNicOrPassportNo1.Text.Trim(),
+                    textBoxAltAddress1.Text.Trim(),
+                    textBoxEmgContact1.Text.Trim(),
+                    textBoxDependents1.Text.Trim(),
+                    comboBoxLocation1.Text,
+                    comboBoxAptClass1.Text,
+                    textBoxAptNo1.Text.Trim(),
+                    dateTimePickerDateOfOccp.Text,
+                    textBoxTimePeriod1.Text.Trim(),
+                    textBoxDeposit1.Text.Trim()
+                    );
+                if (check)
+                {
+                    Clear();
+                    MessageBox.Show("Added to waiting list successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Somthing went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

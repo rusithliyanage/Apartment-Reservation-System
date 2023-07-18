@@ -8,5 +8,6 @@ namespace Apartment_Reservation_System.Classes
 {
     internal class Client
     {
+
     }
 }
