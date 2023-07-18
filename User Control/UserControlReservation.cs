@@ -21,17 +21,24 @@ namespace Apartment_Reservation_System.User_Control
         public bool SubmitReserveAgreement(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9, string v10, string v11)
         {
             bool SubmitStatus = false;
-            string sql = "INSERT INTO ReserveAgreements (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
+            string sql = "INSERT INTO ReserveAgreements VALUES (@V1,@V2,@V3,@V4,@V5,@V6,@V7,@V8,@V9,@V10,@V11)";
             try
             {
                 using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);
-                    sqlCommand.Parameters.AddWithValue("@userName", v1);
-                    sqlCommand.Parameters.AddWithValue("@FirstName", v2);
-                    sqlCommand.Parameters.AddWithValue("@LastName", v3);
-                    sqlCommand.Parameters.AddWithValue("@passWord", v4);
+                    sqlCommand.Parameters.AddWithValue("@V1", v1);
+                    sqlCommand.Parameters.AddWithValue("@V2", v2);
+                    sqlCommand.Parameters.AddWithValue("@V3", v3);
+                    sqlCommand.Parameters.AddWithValue("@V4", v4);
+                    sqlCommand.Parameters.AddWithValue("@V5", v5);
+                    sqlCommand.Parameters.AddWithValue("@V6", v6);
+                    sqlCommand.Parameters.AddWithValue("@V7", v7);
+                    sqlCommand.Parameters.AddWithValue("@V8", v8);
+                    sqlCommand.Parameters.AddWithValue("@V9", v9);
+                    sqlCommand.Parameters.AddWithValue("@V10", v10);
+                    sqlCommand.Parameters.AddWithValue("@V11", v11);
 
                     int queryStatus = (int)sqlCommand.ExecuteNonQuery();
 
@@ -57,17 +64,24 @@ namespace Apartment_Reservation_System.User_Control
         public bool AddToQueue(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9, string v10, string v11)
         {
             bool SubmitStatus = false;
-            string sql = "INSERT INTO ReserveAgreements (User_Name,First_Name,Last_Name,User_Password) VALUES (@userName, @FirstName, @LastName, @passWord)";
+            string sql = "INSERT INTO WaitingLists VALUES (@V1,@V2,@V3,@V4,@V5,@V6,@V7,@V8,@V9,@V10,@V11)";
             try
             {
                 using (SqlConnection conn = new SqlConnection(sqlConnString))
                 {
                     conn.Open();
                     SqlCommand sqlCommand = new SqlCommand(sql, conn);
-                    sqlCommand.Parameters.AddWithValue("@userName", v1);
-                    sqlCommand.Parameters.AddWithValue("@FirstName", v2);
-                    sqlCommand.Parameters.AddWithValue("@LastName", v3);
-                    sqlCommand.Parameters.AddWithValue("@passWord", v4);
+                    sqlCommand.Parameters.AddWithValue("@V1", v1);
+                    sqlCommand.Parameters.AddWithValue("@V2", v2);
+                    sqlCommand.Parameters.AddWithValue("@V3", v3);
+                    sqlCommand.Parameters.AddWithValue("@V4", v4);
+                    sqlCommand.Parameters.AddWithValue("@V5", v5);
+                    sqlCommand.Parameters.AddWithValue("@V6", v6);
+                    sqlCommand.Parameters.AddWithValue("@V7", v7);
+                    sqlCommand.Parameters.AddWithValue("@V8", v8);
+                    sqlCommand.Parameters.AddWithValue("@V9", v9);
+                    sqlCommand.Parameters.AddWithValue("@V10", v10);
+                    sqlCommand.Parameters.AddWithValue("@V11", v11);
 
                     int queryStatus = (int)sqlCommand.ExecuteNonQuery();
 
